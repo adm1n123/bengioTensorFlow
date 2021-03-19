@@ -7,9 +7,9 @@ class BengioModel:
         self.ngram = ngram
         self.context_size = self.ngram - 1  # last n - 1 words used as contexts.
         self.input_dim = self.corpus.vocab_len    # one-hot encoding vector length (size of vocabulary)
-        self.output_dim = 5     # word vector dimension.
+        self.output_dim = 100     # word vector dimension.
         self.input_length = self.context_size    # context size(no of previous words)
-        self.hidden_neurons = 5    # number of neurons in hidden layer.
+        self.hidden_neurons = 60    # number of neurons in hidden layer.
         self.output_neurons = self.corpus.vocab_len   # number of neurons in output layer i.e. |V|. each neuron is a class.
         self.model = None
         self.embedding_layer = None

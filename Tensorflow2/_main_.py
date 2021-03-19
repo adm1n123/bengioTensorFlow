@@ -20,8 +20,10 @@ def main():
 
     model = bengio.model
     print(model.summary())
-
+    print("Dumping to file")
     model.fit(x=train_input, y=train_target, batch_size=100, epochs=2, verbose=1)
+    dump_to_file(bengio, corpus)
+
     # loss, accuracy = model.evaluate(x=dev_input, y=dev_target, batch_size=100, verbose=True)
     # print("loss: {}, accuracy: {}".format(loss, accuracy))
 
@@ -80,6 +82,20 @@ def generate_sentence(bengio, corpus, context=None):
         print("need more context words")
         return
     predicted_list = word_ids[:bengio.context_size]
+
+
+def dump_to_file(bengio, corpus):
+    weights = bengio.model.get_layer('embedding').get_weights()[0]      # or bengio.embedding_layer
+    vocab = corpus.get_vocab()
+    out_v = open('data/vectors.tsv', 'w', encoding='utf-8')
+    out_m = open('data/metadata.tsv', 'w', encoding='utf-8')
+
+    for index, word in enumerate(vocab):
+        vec = weights[index]
+        out_v.write('\t'.join([str(x) for x in vec]) + "\n")
+        out_m.write(word + "\n")
+    out_v.close()
+    out_m.close()
 
 
 if __name__ == '__main__':
