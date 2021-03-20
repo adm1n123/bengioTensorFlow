@@ -1,0 +1,85 @@
+C:\Users\4dm1n123\PycharmProjects\bengioTensorFlow\venv\Scripts\python.exe C:\Users\4dm1n123\PycharmProjects\bengioTensorFlow\Tensorflow2\_main_.py
+2021-03-20 20:54:44.587181: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-03-20 20:54:44.588403: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+[nltk_data] Downloading package brown to
+[nltk_data]     C:\Users\4dm1n123\AppData\Roaming\nltk_data...
+[nltk_data]   Package brown is already up-to-date!
+[nltk_data] Downloading package wordnet to
+[nltk_data]     C:\Users\4dm1n123\AppData\Roaming\nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+Number of paragraphs  15667
+Vocabulary size:  12681
+train_input:  (786226, 4)  train_target:  (786226, 1)
+dev_input:  (149118, 4)  dev_target:  (149118, 1)
+2021-03-20 20:55:42.369088: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-03-20 20:55:42.372543: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
+2021-03-20 20:55:42.373551: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-03-20 20:55:42.381905: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: admin-PC
+2021-03-20 20:55:42.383055: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: admin-PC
+2021-03-20 20:55:42.384947: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-03-20 20:55:42.387615: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+embedding (Embedding)        (None, 4, 100)            1268100
+_________________________________________________________________
+flatten (Flatten)            (None, 400)               0
+_________________________________________________________________
+dense (Dense)                (None, 60)                24060
+_________________________________________________________________
+dense_1 (Dense)              (None, 12681)             773541
+=================================================================
+Total params: 2,065,701
+Trainable params: 2,065,701
+Non-trainable params: 0
+_________________________________________________________________
+None
+Dumping to file
+2021-03-20 20:55:42.841265: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+Epoch 1/2
+7863/7863 [==============================] - 433s 55ms/step - loss: 13.2158 - accuracy: 0.1276 - val_loss: 5.6053 - val_accuracy: 0.1654
+Epoch 2/2
+7863/7863 [==============================] - 418s 53ms/step - loss: 5.9212 - accuracy: 0.1715 - val_loss: 5.5312 - val_accuracy: 0.1767
+word pair: [cat, dog], Cosine Similarity: [[0.06368726]]
+word pair: [cat, human], Cosine Similarity: [[-0.07311551]]
+word pair: [cat, male], Cosine Similarity: [[0.0799366]]
+word pair: [cat, female], Cosine Similarity: [[-0.51804787]]
+word pair: [cat, computer], Cosine Similarity: [[-0.12357651]]
+word pair: [cat, keyboard], Cosine Similarity: [[-0.0215361]]
+word pair: [cat, walking], Cosine Similarity: [[0.07930369]]
+word pair: [cat, room], Cosine Similarity: [[0.28052986]]
+word pair: [dog, human], Cosine Similarity: [[-0.10595449]]
+word pair: [dog, male], Cosine Similarity: [[-0.19938985]]
+word pair: [dog, female], Cosine Similarity: [[0.04641409]]
+word pair: [dog, computer], Cosine Similarity: [[-0.44498834]]
+word pair: [dog, keyboard], Cosine Similarity: [[0.04454203]]
+word pair: [dog, walking], Cosine Similarity: [[0.08662737]]
+word pair: [dog, room], Cosine Similarity: [[0.56246895]]
+word pair: [human, male], Cosine Similarity: [[0.5810304]]
+word pair: [human, female], Cosine Similarity: [[0.37373468]]
+word pair: [human, computer], Cosine Similarity: [[0.22059278]]
+word pair: [human, keyboard], Cosine Similarity: [[0.01059433]]
+word pair: [human, walking], Cosine Similarity: [[-0.3610931]]
+word pair: [human, room], Cosine Similarity: [[-0.24385755]]
+word pair: [male, female], Cosine Similarity: [[0.22449335]]
+word pair: [male, computer], Cosine Similarity: [[0.24627426]]
+word pair: [male, keyboard], Cosine Similarity: [[0.10010901]]
+word pair: [male, walking], Cosine Similarity: [[-0.27648184]]
+word pair: [male, room], Cosine Similarity: [[-0.2128205]]
+word pair: [female, computer], Cosine Similarity: [[0.13468355]]
+word pair: [female, keyboard], Cosine Similarity: [[-0.13175178]]
+word pair: [female, walking], Cosine Similarity: [[-0.10955358]]
+word pair: [female, room], Cosine Similarity: [[-0.08049954]]
+word pair: [computer, keyboard], Cosine Similarity: [[-0.03462596]]
+word pair: [computer, walking], Cosine Similarity: [[-0.35594577]]
+word pair: [computer, room], Cosine Similarity: [[-0.3747219]]
+word pair: [keyboard, walking], Cosine Similarity: [[-0.13187191]]
+word pair: [keyboard, room], Cosine Similarity: [[-0.00622834]]
+word pair: [walking, room], Cosine Similarity: [[0.30751657]]
+
+Actual Sentence: the cat is walking in the bedroom
+Predicted sentence with context size:4 is: the cat is walking in the <UNK>
+
+Process finished with exit code 0
