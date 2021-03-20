@@ -23,7 +23,7 @@ class BengioModel:
             mask_zero=False,
             input_length=self.input_length,
             trainable=True,
-            embeddings_regularizer=tf.keras.regularizers.l2(l2=.001)     # It is for weighs(word vectors). l2=.01 is constant multiplied to loss its hyperparameter.
+            embeddings_regularizer=tf.keras.regularizers.l2(l2=.01)     # It is for weighs(word vectors). l2=.01 is constant multiplied to loss its hyperparameter.
         )
 
         self.model.add(self.embedding_layer)  # add the bottom layer(embedding layer).
@@ -35,7 +35,7 @@ class BengioModel:
         self.model.add(tf.keras.layers.Dense(
             units=self.hidden_neurons,
             activation=tf.keras.activations.tanh,
-            kernel_regularizer=tf.keras.regularizers.l2(l2=.001),    # It is for hidden layer weights i.e. H not biases
+            kernel_regularizer=tf.keras.regularizers.l2(l2=.01),    # It is for hidden layer weights i.e. H not biases
             use_bias=True)
         )
 
@@ -43,7 +43,7 @@ class BengioModel:
         self.model.add(tf.keras.layers.Dense(
             units=self.output_neurons,
             activation=tf.keras.activations.softmax,
-            kernel_regularizer=tf.keras.regularizers.l2(l2=.001),    # It is for output layer weights i.e. U not biases
+            kernel_regularizer=tf.keras.regularizers.l2(l2=.01),    # It is for output layer weights i.e. U not biases
             use_bias=True)
         )
 
