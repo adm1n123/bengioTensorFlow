@@ -7,6 +7,10 @@ from BengioModel import BengioModel
 
 N_GRAM = 5
 
+OUTPUT_DIM = 100    # word vec dimension.
+HIDDEN_NEURONS = 60 # hidden layer neurons
+BATCH_SIZE = 100
+EPOCHS = 2
 
 def main():
 
@@ -15,17 +19,27 @@ def main():
     # use padding of size context_size so that no zeros are added at the end and also get the padded output matrix if
     # python list is raising error. convert to padded list.
 
-    bengio = BengioModel(ngram=N_GRAM, corpus=corpus)
+    bengio = BengioModel(ngram=N_GRAM, corpus=corpus, output_dim=OUTPUT_DIM, hidden_neurons=HIDDEN_NEURONS)
     bengio.create_nn()
 
-    model = bengio.model
-    print(model.summary())
+    print(bengio.model.summary())
     print("Dumping to file")
-    model.fit(x=train_input, y=train_target, batch_size=100, epochs=2, verbose=1)
+    bengio.model.fit(
+        x=train_input,
+        y=train_target,
+        batch_size=BATCH_SIZE,
+        epochs=EPOCHS,
+        verbose=1,
+        shuffle=True,   # shuffle the input for each epoch
+        validation_data=(dev_input, dev_target)
+    )
+
     dump_to_file(bengio, corpus)
 
     # loss, accuracy = model.evaluate(x=dev_input, y=dev_target, batch_size=100, verbose=True)
     # print("loss: {}, accuracy: {}".format(loss, accuracy))
+
+    # add softmax layer for prediction only no training.
 
     cos_similarities(bengio, corpus)
     run_examples(bengio, corpus)
