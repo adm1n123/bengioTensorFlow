@@ -72,7 +72,7 @@ def run_examples(bengio, corpus):
             context_words.append(target_word)  # add next word to context.
 
         predicted_sentence = ' '.join(list(map(corpus.get_index2word, predicted_list)))
-        print("Actual Sentence: {}\nPredicted sentence with context size:{} is: {}".format(sentence, bengio.context_size, predicted_sentence))
+        print("\nActual Sentence: {}\nPredicted sentence with context size:{} is: {}".format(sentence, bengio.context_size, predicted_sentence))
 
 
 def cos_similarities(bengio, corpus):
