@@ -55,7 +55,7 @@ class CorpusProcessor:
                     word_frequency[word_lower] = word_frequency.get(word_lower, 0) + 1
             train_brown_corpus.append(para_words)  # appending(not extending) list at the end.
 
-        frequent_words = set(word for word, frequency in word_frequency.items() if frequency >= 5)
+        frequent_words = set(word for word, frequency in word_frequency.items() if frequency >= 1)
 
         self.vocab = self.vocab.union(frequent_words)   # adding frequents words to vocab NOTE: <UNK> is already added so do union.
         self.vocab_len = len(self.vocab)
@@ -93,7 +93,7 @@ class CorpusProcessor:
 
         return train_input, train_target, dev_input, dev_target
 
-    def get_train_data_sentence(self, sent=None):
+    def get_train_data_paragraph(self, sent=None):
         sentence = 'The cat is walking in the bedroom'.split(" ")
         if sent is not None:
             sentence = sent.lower()
@@ -110,6 +110,57 @@ class CorpusProcessor:
             input_data.append(context_words_idx)
             target_data.append(target_word_idx)
         return input_data, target_data
+
+    def add_words(self):
+        with open("data/corpus.txt") as f:
+            contents = f.readlines()
+        sentences = [x.strip().lower().split(" ") for x in contents]
+
+        words = set()
+        for sentence in sentences:
+            if len(sentence) <= 1:
+                continue
+            for idx, word in enumerate(sentence):
+                words.add(word.lower())
+
+        self.vocab = self.vocab.union(words)   # adding frequents words to vocab NOTE: <UNK> is already added so do union.
+        self.vocab_len = len(self.vocab)
+
+    def get_train_data_sentences(self, sent=None):
+
+        with open("data/corpus.txt") as f:
+            contents = f.readlines()
+        sentences = [x.strip().lower().split(" ") for x in contents]
+
+        # print("Vocabulary size: ", len(self.vocab))
+        # # self.list_to_file(vocab, 'data/vocabulary.txt')
+        #
+        # self.word2index = {word: idx for idx, word in enumerate(self.vocab)}
+        # self.index2word = {idx: word for idx, word in enumerate(self.vocab)}
+
+        input_data = []
+        target_data = []
+        for sentence in sentences:
+            for idx, word in enumerate(sentence):
+                if idx + self.context_size >= len(sentence):
+                    break
+                context_words = [word.lower() for word in sentence[idx:idx + self.context_size]]
+                context_words_idx = list(map(self.get_word2index, context_words))
+
+                target_word_idx = [self.get_word2index(sentence[idx + self.context_size].lower())]
+                input_data.append(context_words_idx)
+                target_data.append(target_word_idx)
+        return input_data, target_data
+
+    def print_words_from_train_data(self, train, target):
+        sentences = []
+        for i in range(len(train)):
+            sentence = []
+            for j in range(len(train[i])):
+                sentence.append(self.get_index2word(train[i][j]))
+            sentence.append(self.get_index2word(target[i][0]))
+            sentences.append(sentence)
+        print(sentences)
 
     def get_vocab(self):
         return self.vocab

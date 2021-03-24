@@ -1,7 +1,7 @@
 Raju eats today
 Amit eats today
 David eats today
-Bod eats today
+bob eats today
 Robbin eats today
 John eats today
 Nancy eats today
@@ -10,7 +10,7 @@ Alice eats today
 Raju runs today
 Amit runs today
 David runs today
-Bod runs today
+bob runs today
 Robbin runs today
 John runs today
 Nancy runs today
@@ -19,7 +19,7 @@ Alice runs today
 Raju plays today
 Amit plays today
 David plays today
-Bod plays today
+bob plays today
 Robbin plays today
 John plays today
 Nancy plays today
@@ -28,7 +28,7 @@ Alice plays today
 Raju ate yesterday
 Amit ate yesterday
 David ate yesterday
-Bod ate yesterday
+bob ate yesterday
 Robbin ate yesterday
 John ate yesterday
 Nancy ate yesterday
@@ -37,7 +37,7 @@ Alice ate yesterday
 Raju ran yesterday
 Amit ran yesterday
 David ran yesterday
-Bod ran yesterday
+bob ran yesterday
 Robbin ran yesterday
 John ran yesterday
 Nancy ran yesterday
@@ -46,7 +46,7 @@ Alice ran yesterday
 Raju played yesterday
 Amit played yesterday
 David played yesterday
-Bod played yesterday
+bob played yesterday
 Robbin played yesterday
 John played yesterday
 Nancy played yesterday

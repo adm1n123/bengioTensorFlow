@@ -5,25 +5,30 @@ from sklearn.metrics.pairwise import cosine_similarity
 from CorpusProcessor import CorpusProcessor
 from BengioModel import BengioModel
 
-N_GRAM = 5
+N_GRAM = 3
 
-OUTPUT_DIM = 100    # word vec dimension.
-HIDDEN_NEURONS = 60 # hidden layer neurons
-BATCH_SIZE = 100
-EPOCHS = 2
+OUTPUT_DIM = 50    # word vec dimension.
+HIDDEN_NEURONS = 60  # hidden layer neurons
+BATCH_SIZE = 100  # keep batch size small tensorflow may overflow memory for batch size > 10k
+EPOCHS = 1
+
 
 def main():
 
     corpus = CorpusProcessor(ngram=N_GRAM)
+    corpus.add_words()  # add new words to vocab.
+
     train_input, train_target, dev_input, dev_target = corpus.get_train_data()
     # use padding of size context_size so that no zeros are added at the end and also get the padded output matrix if
     # python list is raising error. convert to padded list.
+
+
 
     bengio = BengioModel(ngram=N_GRAM, corpus=corpus, output_dim=OUTPUT_DIM, hidden_neurons=HIDDEN_NEURONS)
     bengio.create_nn()
 
     print(bengio.model.summary())
-    print("Dumping to file")
+
     bengio.model.fit(
         x=train_input,
         y=train_target,
@@ -34,12 +39,29 @@ def main():
         validation_data=(dev_input, dev_target)
     )
 
-    dump_to_file(bengio, corpus)
 
     # loss, accuracy = model.evaluate(x=dev_input, y=dev_target, batch_size=100, verbose=True)
     # print("loss: {}, accuracy: {}".format(loss, accuracy))
 
     # add softmax layer for prediction only no training.
+
+    new_train, new_target = corpus.get_train_data_sentences()
+
+    bengio.model.fit(
+        x=new_train,
+        y=new_target,
+        batch_size=1,
+        epochs=10,
+        verbose=1,
+        shuffle=True   # shuffle the input for each epoch
+    )
+
+    print("Dumping to file")
+    dump_to_file(bengio, corpus)
+
+    corpus.print_words_from_train_data(new_train, new_target)
+
+    evaluate_context_learning(bengio, corpus)
 
     cos_similarities(bengio, corpus)
     run_examples(bengio, corpus)
@@ -98,11 +120,33 @@ def generate_sentence(bengio, corpus, context=None):
     predicted_list = word_ids[:bengio.context_size]
 
 
-def dump_to_file(bengio, corpus):
+def evaluate_context_learning(bengio, corpus):
+    present = ['eats', 'runs', 'plays']
+    past = ['ate', 'ran', 'played']
+    present_word_idx = list(map(corpus.get_word2index, present))
+    past_word_idx = list(map(corpus.get_word2index, past))
+
+    present_vec = bengio.embedding_layer(tf.constant(present_word_idx)).numpy()
+    past_vec = bengio.embedding_layer(tf.constant(past_word_idx)).numpy()
+
+    diff_word = []
+    diff_vec = []
+    for i in range(len(present_word_idx)):
+        diff_word.append(present[i]+'_vector - '+past[i]+'_vector')
+        diff_vec.append(np.subtract(present_vec[i], past_vec[i]))
+
+    for i in range(len(present)):
+        for j in range(i+1, len(present)):
+            print('cosine similarity: ('+diff_word[i]+').('+diff_word[j]+') is: ', cosine_similarity([diff_vec[i]], [diff_vec[j]]))
+
+
+
+
+def dump_to_file(bengio, corpus, prefix=""):
     weights = bengio.model.get_layer('embedding').get_weights()[0]      # or bengio.embedding_layer
     vocab = corpus.get_vocab()
-    out_v = open('data/vectors.tsv', 'w', encoding='utf-8')
-    out_m = open('data/metadata.tsv', 'w', encoding='utf-8')
+    out_v = open('data/'+prefix+'vectors.tsv', 'w', encoding='utf-8')
+    out_m = open('data/'+prefix+'metadata.tsv', 'w', encoding='utf-8')
 
     for index, word in enumerate(vocab):
         vec = weights[index]
