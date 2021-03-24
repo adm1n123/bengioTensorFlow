@@ -1,6 +1,6 @@
 C:\Users\4dm1n123\PycharmProjects\bengioTensorFlow\venv\Scripts\python.exe C:\Users\4dm1n123\PycharmProjects\bengioTensorFlow\Tensorflow2\_main_.py
-2021-03-24 14:37:16.669204: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
-2021-03-24 14:37:16.703092: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2021-03-24 17:46:25.833168: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-03-24 17:46:25.836745: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 [nltk_data] Downloading package brown to
 [nltk_data]     C:\Users\4dm1n123\AppData\Roaming\nltk_data...
 [nltk_data]   Package brown is already up-to-date!
@@ -8,78 +8,60 @@ C:\Users\4dm1n123\PycharmProjects\bengioTensorFlow\venv\Scripts\python.exe C:\Us
 [nltk_data]     C:\Users\4dm1n123\AppData\Roaming\nltk_data...
 [nltk_data]   Package wordnet is already up-to-date!
 Number of paragraphs  15667
-Vocabulary size:  12681
-train_input:  (786226, 4)  train_target:  (786226, 1)
-dev_input:  (149118, 4)  dev_target:  (149118, 1)
-2021-03-24 14:39:07.140508: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
-2021-03-24 14:39:07.181339: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
-2021-03-24 14:39:07.198281: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
-2021-03-24 14:39:07.208671: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: admin-PC
-2021-03-24 14:39:07.210717: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: admin-PC
-2021-03-24 14:39:07.314043: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
+Vocabulary size:  45417
+train_input:  (872823, 2)  train_target:  (872823, 1)
+dev_input:  (174016, 2)  dev_target:  (174016, 1)
+2021-03-24 17:49:03.359669: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-03-24 17:49:03.366781: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
+2021-03-24 17:49:03.368852: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-03-24 17:49:03.381457: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: admin-PC
+2021-03-24 17:49:03.382773: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: admin-PC
+2021-03-24 17:49:03.385056: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2021-03-24 14:39:07.329201: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-03-24 17:49:03.388098: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
 Model: "sequential"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
-embedding (Embedding)        (None, 4, 100)            1268100
+embedding (Embedding)        (None, 2, 50)             2270850
 _________________________________________________________________
-flatten (Flatten)            (None, 400)               0
+flatten (Flatten)            (None, 100)               0
 _________________________________________________________________
-dense (Dense)                (None, 60)                24060
+dense (Dense)                (None, 60)                6060
 _________________________________________________________________
-dense_1 (Dense)              (None, 12681)             773541
+dense_1 (Dense)              (None, 45417)             2770437
 =================================================================
-Total params: 2,065,701
-Trainable params: 2,065,701
+Total params: 5,047,347
+Trainable params: 5,047,347
 Non-trainable params: 0
 _________________________________________________________________
 None
+2021-03-24 17:49:03.901437: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+8729/8729 [==============================] - 1564s 178ms/step - loss: 18.4527 - accuracy: 0.1071 - val_loss: 6.5455 - val_accuracy: 0.1302
+Epoch 1/10
+48/48 [==============================] - 5s 91ms/step - loss: 4.8847 - accuracy: 0.1667
+Epoch 2/10
+48/48 [==============================] - 3s 53ms/step - loss: 1.0113 - accuracy: 0.5000
+Epoch 3/10
+48/48 [==============================] - 2s 42ms/step - loss: 0.7936 - accuracy: 0.8333
+Epoch 4/10
+48/48 [==============================] - 2s 42ms/step - loss: 0.5172 - accuracy: 1.0000
+Epoch 5/10
+48/48 [==============================] - 2s 47ms/step - loss: 0.3700 - accuracy: 1.0000
+Epoch 6/10
+48/48 [==============================] - 2s 42ms/step - loss: 0.2936 - accuracy: 1.0000
+Epoch 7/10
+48/48 [==============================] - 2s 42ms/step - loss: 0.2521 - accuracy: 1.0000
+Epoch 8/10
+48/48 [==============================] - 2s 46ms/step - loss: 0.2268 - accuracy: 1.0000
+Epoch 9/10
+48/48 [==============================] - 3s 55ms/step - loss: 0.2081 - accuracy: 1.0000
+Epoch 10/10
+48/48 [==============================] - 2s 46ms/step - loss: 0.1944 - accuracy: 1.0000
 Dumping to file
-2021-03-24 14:39:09.596166: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
-Epoch 1/2
-7863/7863 [==============================] - 405s 51ms/step - loss: 13.2137 - accuracy: 0.1266 - val_loss: 5.5900 - val_accuracy: 0.1667
-Epoch 2/2
-7863/7863 [==============================] - 393s 50ms/step - loss: 5.9235 - accuracy: 0.1711 - val_loss: 5.5402 - val_accuracy: 0.1720
-word pair: [cat, dog], Cosine Similarity: [[0.34418094]]
-word pair: [cat, human], Cosine Similarity: [[0.24242574]]
-word pair: [cat, male], Cosine Similarity: [[-0.08214432]]
-word pair: [cat, female], Cosine Similarity: [[0.14651792]]
-word pair: [cat, computer], Cosine Similarity: [[-0.03283277]]
-word pair: [cat, keyboard], Cosine Similarity: [[0.09824684]]
-word pair: [cat, walking], Cosine Similarity: [[0.33524755]]
-word pair: [cat, room], Cosine Similarity: [[0.11432794]]
-word pair: [dog, human], Cosine Similarity: [[0.40195572]]
-word pair: [dog, male], Cosine Similarity: [[0.19414978]]
-word pair: [dog, female], Cosine Similarity: [[0.32552853]]
-word pair: [dog, computer], Cosine Similarity: [[-0.04351173]]
-word pair: [dog, keyboard], Cosine Similarity: [[0.10949621]]
-word pair: [dog, walking], Cosine Similarity: [[0.34968442]]
-word pair: [dog, room], Cosine Similarity: [[-0.09907205]]
-word pair: [human, male], Cosine Similarity: [[0.41065365]]
-word pair: [human, female], Cosine Similarity: [[0.53180003]]
-word pair: [human, computer], Cosine Similarity: [[-0.36323282]]
-word pair: [human, keyboard], Cosine Similarity: [[0.07580362]]
-word pair: [human, walking], Cosine Similarity: [[0.10789356]]
-word pair: [human, room], Cosine Similarity: [[-0.42709005]]
-word pair: [male, female], Cosine Similarity: [[0.25368226]]
-word pair: [male, computer], Cosine Similarity: [[-0.05715749]]
-word pair: [male, keyboard], Cosine Similarity: [[-0.01727636]]
-word pair: [male, walking], Cosine Similarity: [[-0.13151945]]
-word pair: [male, room], Cosine Similarity: [[-0.03997095]]
-word pair: [female, computer], Cosine Similarity: [[-0.42795333]]
-word pair: [female, keyboard], Cosine Similarity: [[-0.04748498]]
-word pair: [female, walking], Cosine Similarity: [[-0.14332554]]
-word pair: [female, room], Cosine Similarity: [[-0.43965906]]
-word pair: [computer, keyboard], Cosine Similarity: [[0.09583478]]
-word pair: [computer, walking], Cosine Similarity: [[-0.23445953]]
-word pair: [computer, room], Cosine Similarity: [[0.55233866]]
-word pair: [keyboard, walking], Cosine Similarity: [[0.09599638]]
-word pair: [keyboard, room], Cosine Similarity: [[0.07401332]]
-word pair: [walking, room], Cosine Similarity: [[-0.2576047]]
-
-Actual Sentence: the cat is walking in the bedroom
-Predicted sentence with context size:4 is: the cat is walking to the <UNK>
+[['raju', 'eats', 'today'], ['amit', 'eats', 'today'], ['david', 'eats', 'today'], ['bob', 'eats', 'today'], ['robbin', 'eats', 'today'], ['john', 'eats', 'today'], ['nancy', 'eats', 'today'], ['alice', 'eats', 'today'], ['raju', 'runs', 'today'], ['amit', 'runs', 'today'], ['david', 'runs', 'today'], ['bob', 'runs', 'today'], ['robbin', 'runs', 'today'], ['john', 'runs', 'today'], ['nancy', 'runs', 'today'], ['alice', 'runs', 'today'], ['raju', 'plays', 'today'], ['amit', 'plays', 'today'], ['david', 'plays', 'today'], ['bob', 'plays', 'today'], ['robbin', 'plays', 'today'], ['john', 'plays', 'today'], ['nancy', 'plays', 'today'], ['alice', 'plays', 'today'], ['raju', 'ate', 'yesterday'], ['amit', 'ate', 'yesterday'], ['david', 'ate', 'yesterday'], ['bob', 'ate', 'yesterday'], ['robbin', 'ate', 'yesterday'], ['john', 'ate', 'yesterday'], ['nancy', 'ate', 'yesterday'], ['alice', 'ate', 'yesterday'], ['raju', 'ran', 'yesterday'], ['amit', 'ran', 'yesterday'], ['david', 'ran', 'yesterday'], ['bob', 'ran', 'yesterday'], ['robbin', 'ran', 'yesterday'], ['john', 'ran', 'yesterday'], ['nancy', 'ran', 'yesterday'], ['alice', 'ran', 'yesterday'], ['raju', 'played', 'yesterday'], ['amit', 'played', 'yesterday'], ['david', 'played', 'yesterday'], ['bob', 'played', 'yesterday'], ['robbin', 'played', 'yesterday'], ['john', 'played', 'yesterday'], ['nancy', 'played', 'yesterday'], ['alice', 'played', 'yesterday']]
+cosine similarity: (eats_vector - ate_vector).(runs_vector - ran_vector) is:  [[0.9757737]]
+cosine similarity: (eats_vector - ate_vector).(plays_vector - played_vector) is:  [[0.96277064]]
+cosine similarity: (runs_vector - ran_vector).(plays_vector - played_vector) is:  [[0.9757668]]
 
 Process finished with exit code 0
