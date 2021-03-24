@@ -1,6 +1,6 @@
 C:\Users\4dm1n123\PycharmProjects\bengioTensorFlow\venv\Scripts\python.exe C:\Users\4dm1n123\PycharmProjects\bengioTensorFlow\Tensorflow2\_main_.py
-2021-03-20 20:54:44.587181: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
-2021-03-20 20:54:44.588403: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2021-03-24 14:37:16.669204: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-03-24 14:37:16.703092: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 [nltk_data] Downloading package brown to
 [nltk_data]     C:\Users\4dm1n123\AppData\Roaming\nltk_data...
 [nltk_data]   Package brown is already up-to-date!
@@ -11,14 +11,14 @@ Number of paragraphs  15667
 Vocabulary size:  12681
 train_input:  (786226, 4)  train_target:  (786226, 1)
 dev_input:  (149118, 4)  dev_target:  (149118, 1)
-2021-03-20 20:55:42.369088: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
-2021-03-20 20:55:42.372543: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
-2021-03-20 20:55:42.373551: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
-2021-03-20 20:55:42.381905: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: admin-PC
-2021-03-20 20:55:42.383055: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: admin-PC
-2021-03-20 20:55:42.384947: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
+2021-03-24 14:39:07.140508: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-03-24 14:39:07.181339: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
+2021-03-24 14:39:07.198281: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-03-24 14:39:07.208671: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: admin-PC
+2021-03-24 14:39:07.210717: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: admin-PC
+2021-03-24 14:39:07.314043: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2021-03-20 20:55:42.387615: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-03-24 14:39:07.329201: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
 Model: "sequential"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
@@ -37,49 +37,49 @@ Non-trainable params: 0
 _________________________________________________________________
 None
 Dumping to file
-2021-03-20 20:55:42.841265: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+2021-03-24 14:39:09.596166: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
 Epoch 1/2
-7863/7863 [==============================] - 433s 55ms/step - loss: 13.2158 - accuracy: 0.1276 - val_loss: 5.6053 - val_accuracy: 0.1654
+7863/7863 [==============================] - 405s 51ms/step - loss: 13.2137 - accuracy: 0.1266 - val_loss: 5.5900 - val_accuracy: 0.1667
 Epoch 2/2
-7863/7863 [==============================] - 418s 53ms/step - loss: 5.9212 - accuracy: 0.1715 - val_loss: 5.5312 - val_accuracy: 0.1767
-word pair: [cat, dog], Cosine Similarity: [[0.06368726]]
-word pair: [cat, human], Cosine Similarity: [[-0.07311551]]
-word pair: [cat, male], Cosine Similarity: [[0.0799366]]
-word pair: [cat, female], Cosine Similarity: [[-0.51804787]]
-word pair: [cat, computer], Cosine Similarity: [[-0.12357651]]
-word pair: [cat, keyboard], Cosine Similarity: [[-0.0215361]]
-word pair: [cat, walking], Cosine Similarity: [[0.07930369]]
-word pair: [cat, room], Cosine Similarity: [[0.28052986]]
-word pair: [dog, human], Cosine Similarity: [[-0.10595449]]
-word pair: [dog, male], Cosine Similarity: [[-0.19938985]]
-word pair: [dog, female], Cosine Similarity: [[0.04641409]]
-word pair: [dog, computer], Cosine Similarity: [[-0.44498834]]
-word pair: [dog, keyboard], Cosine Similarity: [[0.04454203]]
-word pair: [dog, walking], Cosine Similarity: [[0.08662737]]
-word pair: [dog, room], Cosine Similarity: [[0.56246895]]
-word pair: [human, male], Cosine Similarity: [[0.5810304]]
-word pair: [human, female], Cosine Similarity: [[0.37373468]]
-word pair: [human, computer], Cosine Similarity: [[0.22059278]]
-word pair: [human, keyboard], Cosine Similarity: [[0.01059433]]
-word pair: [human, walking], Cosine Similarity: [[-0.3610931]]
-word pair: [human, room], Cosine Similarity: [[-0.24385755]]
-word pair: [male, female], Cosine Similarity: [[0.22449335]]
-word pair: [male, computer], Cosine Similarity: [[0.24627426]]
-word pair: [male, keyboard], Cosine Similarity: [[0.10010901]]
-word pair: [male, walking], Cosine Similarity: [[-0.27648184]]
-word pair: [male, room], Cosine Similarity: [[-0.2128205]]
-word pair: [female, computer], Cosine Similarity: [[0.13468355]]
-word pair: [female, keyboard], Cosine Similarity: [[-0.13175178]]
-word pair: [female, walking], Cosine Similarity: [[-0.10955358]]
-word pair: [female, room], Cosine Similarity: [[-0.08049954]]
-word pair: [computer, keyboard], Cosine Similarity: [[-0.03462596]]
-word pair: [computer, walking], Cosine Similarity: [[-0.35594577]]
-word pair: [computer, room], Cosine Similarity: [[-0.3747219]]
-word pair: [keyboard, walking], Cosine Similarity: [[-0.13187191]]
-word pair: [keyboard, room], Cosine Similarity: [[-0.00622834]]
-word pair: [walking, room], Cosine Similarity: [[0.30751657]]
+7863/7863 [==============================] - 393s 50ms/step - loss: 5.9235 - accuracy: 0.1711 - val_loss: 5.5402 - val_accuracy: 0.1720
+word pair: [cat, dog], Cosine Similarity: [[0.34418094]]
+word pair: [cat, human], Cosine Similarity: [[0.24242574]]
+word pair: [cat, male], Cosine Similarity: [[-0.08214432]]
+word pair: [cat, female], Cosine Similarity: [[0.14651792]]
+word pair: [cat, computer], Cosine Similarity: [[-0.03283277]]
+word pair: [cat, keyboard], Cosine Similarity: [[0.09824684]]
+word pair: [cat, walking], Cosine Similarity: [[0.33524755]]
+word pair: [cat, room], Cosine Similarity: [[0.11432794]]
+word pair: [dog, human], Cosine Similarity: [[0.40195572]]
+word pair: [dog, male], Cosine Similarity: [[0.19414978]]
+word pair: [dog, female], Cosine Similarity: [[0.32552853]]
+word pair: [dog, computer], Cosine Similarity: [[-0.04351173]]
+word pair: [dog, keyboard], Cosine Similarity: [[0.10949621]]
+word pair: [dog, walking], Cosine Similarity: [[0.34968442]]
+word pair: [dog, room], Cosine Similarity: [[-0.09907205]]
+word pair: [human, male], Cosine Similarity: [[0.41065365]]
+word pair: [human, female], Cosine Similarity: [[0.53180003]]
+word pair: [human, computer], Cosine Similarity: [[-0.36323282]]
+word pair: [human, keyboard], Cosine Similarity: [[0.07580362]]
+word pair: [human, walking], Cosine Similarity: [[0.10789356]]
+word pair: [human, room], Cosine Similarity: [[-0.42709005]]
+word pair: [male, female], Cosine Similarity: [[0.25368226]]
+word pair: [male, computer], Cosine Similarity: [[-0.05715749]]
+word pair: [male, keyboard], Cosine Similarity: [[-0.01727636]]
+word pair: [male, walking], Cosine Similarity: [[-0.13151945]]
+word pair: [male, room], Cosine Similarity: [[-0.03997095]]
+word pair: [female, computer], Cosine Similarity: [[-0.42795333]]
+word pair: [female, keyboard], Cosine Similarity: [[-0.04748498]]
+word pair: [female, walking], Cosine Similarity: [[-0.14332554]]
+word pair: [female, room], Cosine Similarity: [[-0.43965906]]
+word pair: [computer, keyboard], Cosine Similarity: [[0.09583478]]
+word pair: [computer, walking], Cosine Similarity: [[-0.23445953]]
+word pair: [computer, room], Cosine Similarity: [[0.55233866]]
+word pair: [keyboard, walking], Cosine Similarity: [[0.09599638]]
+word pair: [keyboard, room], Cosine Similarity: [[0.07401332]]
+word pair: [walking, room], Cosine Similarity: [[-0.2576047]]
 
 Actual Sentence: the cat is walking in the bedroom
-Predicted sentence with context size:4 is: the cat is walking in the <UNK>
+Predicted sentence with context size:4 is: the cat is walking to the <UNK>
 
 Process finished with exit code 0
