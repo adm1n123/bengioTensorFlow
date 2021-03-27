@@ -112,7 +112,7 @@ class CorpusProcessor:
         return input_data, target_data
 
     def add_words(self):
-        with open("data/corpus.txt") as f:
+        with open("data/my_corpus.txt") as f:
             contents = f.readlines()
         sentences = [x.strip().lower().split(" ") for x in contents]
 
@@ -121,22 +121,16 @@ class CorpusProcessor:
             if len(sentence) <= 1:
                 continue
             for idx, word in enumerate(sentence):
-                words.add(word.lower())
+                words.add(word)
 
         self.vocab = self.vocab.union(words)   # adding frequents words to vocab NOTE: <UNK> is already added so do union.
         self.vocab_len = len(self.vocab)
 
-    def get_train_data_sentences(self, sent=None):
+    def get_train_data_from_sentences(self, sent=None):
 
-        with open("data/corpus.txt") as f:
+        with open("data/my_corpus.txt") as f:
             contents = f.readlines()
         sentences = [x.strip().lower().split(" ") for x in contents]
-
-        # print("Vocabulary size: ", len(self.vocab))
-        # # self.list_to_file(vocab, 'data/vocabulary.txt')
-        #
-        # self.word2index = {word: idx for idx, word in enumerate(self.vocab)}
-        # self.index2word = {idx: word for idx, word in enumerate(self.vocab)}
 
         input_data = []
         target_data = []
@@ -144,10 +138,10 @@ class CorpusProcessor:
             for idx, word in enumerate(sentence):
                 if idx + self.context_size >= len(sentence):
                     break
-                context_words = [word.lower() for word in sentence[idx:idx + self.context_size]]
+                context_words = [word for word in sentence[idx:idx + self.context_size]]
                 context_words_idx = list(map(self.get_word2index, context_words))
 
-                target_word_idx = [self.get_word2index(sentence[idx + self.context_size].lower())]
+                target_word_idx = [self.get_word2index(sentence[idx + self.context_size])]
                 input_data.append(context_words_idx)
                 target_data.append(target_word_idx)
         return input_data, target_data
@@ -167,6 +161,102 @@ class CorpusProcessor:
 
     def get_corpus_paras(self):
         return brown.paras()
+
+    def list_to_file(self, mylist, filename):
+        with open(filename, 'w') as file:
+            for element in mylist:
+                file.write('%s\n' % element)
+
+    def dict_to_file(self, mydict, filename):
+        with open(filename, 'w') as file:
+            for key, value in mydict.items():
+                file.write(str(value)+':  '+str(key)+'\n')
+
+
+class CustomCorpusProcessor:
+
+    def __init__(self, ngram):
+        self.ngram = ngram
+        self.context_size = self.ngram - 1
+        self.word2index = {}
+        self.index2word = {}
+        self.UNKNOWN_SYMBOL = '<UNK>'
+        self.vocab = {self.UNKNOWN_SYMBOL}      # put the <UNK> symbol in vocab.
+        self.vocab_len = None
+
+    def get_index2word(self, idx):
+        if idx >= len(self.vocab):
+            print("word index out of range")
+            exit(1)
+        return self.index2word[idx]
+
+    def get_word2index(self, word):
+        unk_index = self.word2index[self.UNKNOWN_SYMBOL]
+        return self.word2index.get(word, unk_index)  # if word is not in vocabulary return unknown index.
+
+    def add_words_to_vocab(self):
+        with open("data/my_corpus.txt") as f:
+            contents = f.readlines()
+        sentences = [x.strip().lower().split(" ") for x in contents]
+
+        words = set()
+        for sentence in sentences:
+            if len(sentence) <= 1:
+                continue
+            for idx, word in enumerate(sentence):
+                words.add(word.lower())
+
+        self.vocab = self.vocab.union(words)   # adding frequent words to vocab NOTE: <UNK> is already added so do union.
+        self.vocab_len = len(self.vocab)
+
+    def get_train_data_from_sentence(self, sent=None):
+        sentence = sent.lower().split(" ")
+
+        input_data = []
+        target_data = []
+        for idx, word in enumerate(sentence):
+            if idx + self.context_size >= len(sentence):
+                break
+            context_words = [word for word in sentence[idx:idx + self.context_size]]
+            context_words_idx = list(map(self.get_word2index, context_words))
+            input_data.append(context_words_idx)
+            target_word_idx = [self.get_word2index(sentence[idx + self.context_size])]
+            target_data.append(target_word_idx)
+        return input_data, target_data
+
+    def get_train_data_from_sentences(self):
+        self.add_words_to_vocab()
+
+        print("Vocabulary size: ", len(self.vocab))
+        self.list_to_file(self.vocab, 'data/custom_vocabulary.txt')
+
+        self.word2index = {word: idx for idx, word in enumerate(self.vocab)}
+        self.index2word = {idx: word for idx, word in enumerate(self.vocab)}
+
+        with open("data/my_corpus.txt") as f:
+            contents = f.readlines()
+        sentences = [x.strip() for x in contents]
+
+        input_data = []
+        target_data = []
+        for sentence in sentences:
+            context_words_idxs, target_word_idxs = self.get_train_data_from_sentence(sentence)
+            input_data.extend(context_words_idxs)
+            target_data.extend(target_word_idxs)
+        return input_data, target_data
+
+    def print_words_from_train_data(self, train, target):
+        sentences = []
+        for i in range(len(train)):
+            sentence = []
+            for j in range(len(train[i])):
+                sentence.append(self.get_index2word(train[i][j]))
+            sentence.append(self.get_index2word(target[i][0]))
+            sentences.append(sentence)
+        print(sentences)
+
+    def get_vocab(self):
+        return self.vocab
 
     def list_to_file(self, mylist, filename):
         with open(filename, 'w') as file:
