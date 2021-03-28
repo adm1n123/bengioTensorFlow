@@ -106,6 +106,13 @@ class BengioModelModified:
             kernel_regularizer=tf.keras.regularizers.l2(l2=1e-4),    # It is for hidden layer weights i.e. H not biases
             use_bias=True)
         )
+        # add hidden layer
+        self.model.add(tf.keras.layers.Dense(
+            units=self.hidden_neurons,
+            activation=tf.keras.activations.tanh,
+            kernel_regularizer=tf.keras.regularizers.l2(l2=1e-4),    # It is for hidden layer weights i.e. H not biases
+            use_bias=True)
+        )
 
         # add output layer
         self.model.add(tf.keras.layers.Dense(

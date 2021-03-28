@@ -16,8 +16,8 @@ EPOCHS = 2
 
 def main():
     # run_bengio_on_brown_corpus()
-    # run_bengio_modified_on_custom_corpus()
-    bengio_on_custom_corpus()
+    run_bengio_modified_on_custom_corpus()
+    # bengio_on_custom_corpus()
 
 
 def run_bengio_on_brown_corpus():
@@ -55,8 +55,19 @@ def run_bengio_on_brown_corpus():
 
 
 def run_bengio_modified_on_custom_corpus():
-    corpus = CustomCorpusProcessor(ngram=N_GRAM)
-    new_train, new_target = corpus.get_train_data_from_sentences()
+    corpus = CorpusProcessor(ngram=N_GRAM)
+    print(corpus.get_vocab())
+    corpus.add_words()
+    print(corpus.get_vocab())
+
+    train_input, train_target, dev_input, dev_target = corpus.get_train_data()
+
+
+    custom_train, custom_target = corpus.get_train_data_from_sentences()
+    corpus.print_words_from_train_data(custom_train, custom_target)
+
+    # use padding of size context_size so that no zeros are added at the end and also get the padded output matrix if
+    # python list is raising error. convert to padded list.
 
     bengio = BengioModelModified(ngram=N_GRAM, corpus=corpus, output_dim=OUTPUT_DIM, hidden_neurons=HIDDEN_NEURONS)
     bengio.create_nn()
@@ -64,8 +75,18 @@ def run_bengio_modified_on_custom_corpus():
     print(bengio.model.summary())
 
     bengio.model.fit(
-        x=new_train,
-        y=new_target,
+        x=train_input,
+        y=train_target,
+        batch_size=BATCH_SIZE,
+        epochs=EPOCHS,
+        verbose=1,
+        shuffle=True,   # shuffle the input for each epoch
+        validation_data=(dev_input, dev_target)
+    )
+
+    bengio.model.fit(
+        x=custom_train,
+        y=custom_target,
         batch_size=1,
         epochs=5,
         verbose=1,
@@ -73,13 +94,23 @@ def run_bengio_modified_on_custom_corpus():
     )
 
     print("Dumping to file")
-    dump_to_file(bengio, corpus, prefix="bengio_modified_cust_corp_")
+    dump_to_file(bengio, corpus, prefix="bengio_on_custom_corpus_")
 
-    corpus.print_words_from_train_data(new_train, new_target)
-
+    corpus.print_words_from_train_data(custom_train, custom_target)
     evaluate_context_learning(bengio, corpus)
 
-    cos_similarities(bengio, corpus)
+    fruits = 'papaya banana grapes mango'
+    activity = 'plays eats runs play eat run'
+    other = 'today yesterday'
+    hverbs = 'do does is has have did was were had will shall'
+    nouns = 'raju amit robbin nancy david john alice'
+
+    cos_similarities(bengio, corpus, fruits)
+    cos_similarities(bengio, corpus, activity)
+    cos_similarities(bengio, corpus, other)
+    cos_similarities(bengio, corpus, hverbs)
+    cos_similarities(bengio, corpus, nouns)
+
     run_examples(bengio, corpus)
 
 
