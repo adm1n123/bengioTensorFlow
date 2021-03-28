@@ -73,7 +73,7 @@ def run_bengio_modified_on_custom_corpus():
     )
 
     print("Dumping to file")
-    dump_to_file(bengio, corpus, prefix="bengio_cust_corp_")
+    dump_to_file(bengio, corpus, prefix="bengio_modified_cust_corp_")
 
     corpus.print_words_from_train_data(new_train, new_target)
 

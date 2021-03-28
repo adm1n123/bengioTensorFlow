@@ -1,67 +1,176 @@
 C:\Users\4dm1n123\PycharmProjects\bengioTensorFlow\venv\Scripts\python.exe C:\Users\4dm1n123\PycharmProjects\bengioTensorFlow\Tensorflow2\_main_.py
-2021-03-24 17:46:25.833168: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
-2021-03-24 17:46:25.836745: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2021-03-28 10:21:53.466713: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-03-28 10:21:53.467848: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 [nltk_data] Downloading package brown to
 [nltk_data]     C:\Users\4dm1n123\AppData\Roaming\nltk_data...
 [nltk_data]   Package brown is already up-to-date!
 [nltk_data] Downloading package wordnet to
 [nltk_data]     C:\Users\4dm1n123\AppData\Roaming\nltk_data...
 [nltk_data]   Package wordnet is already up-to-date!
+{'<UNK>'}
+{'running', 'ludo', 'plays', 'eats', 'melon', 'in', 'alice', 'david', 'am', 'an', 'nancy', 'football', 'with', 'was', 'apple', 'guess', 'cricket', 'badminton', 'room', 'today', 'pineapple', 'robbin', 'walking', 'amit', 'bedroom', 'runs', 'me', 'on', 'polo', 'vegetables', 'john', 'mango', 'a', 'not', 'now', 'out', 'going', 'played', '<UNK>', 'bread', 'yesterday', 'papaya', 'i', 'raju', 'poker', 'basketball', 'listening', 'chess', 'banana', 'is', 'floor', 'the', 'orange', 'cat', 'bob', 'eating', 'playing', 'volleyball', 'grapes', 'ate', 'terrace', 'ran'}
 Number of paragraphs  15667
-Vocabulary size:  45417
-train_input:  (872823, 2)  train_target:  (872823, 1)
-dev_input:  (174016, 2)  dev_target:  (174016, 1)
-2021-03-24 17:49:03.359669: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
-2021-03-24 17:49:03.366781: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
-2021-03-24 17:49:03.368852: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
-2021-03-24 17:49:03.381457: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: admin-PC
-2021-03-24 17:49:03.382773: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: admin-PC
-2021-03-24 17:49:03.385056: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
+Vocabulary size:  45421
+train_input:  (829133, 3)  train_target:  (829133, 1)
+dev_input:  (161423, 3)  dev_target:  (161423, 1)
+[['raju', 'is', 'eating', 'an'], ['is', 'eating', 'an', 'apple'], ['eating', 'an', 'apple', 'today'], ['raju', 'is', 'eating', 'a'], ['is', 'eating', 'a', 'banana'], ['eating', 'a', 'banana', 'today'], ['amit', 'is', 'eating', 'a'], ['is', 'eating', 'a', 'grapes'], ['eating', 'a', 'grapes', 'today'], ['david', 'is', 'eating', 'a'], ['is', 'eating', 'a', 'papaya'], ['eating', 'a', 'papaya', 'today'], ['bob', 'is', 'eating', 'a'], ['is', 'eating', 'a', 'bread'], ['eating', 'a', 'bread', 'today'], ['robbin', 'is', 'eating', 'a'], ['is', 'eating', 'a', 'vegetables'], ['eating', 'a', 'vegetables', 'today'], ['john', 'is', 'eating', 'a'], ['is', 'eating', 'a', 'melon'], ['eating', 'a', 'melon', 'today'], ['nancy', 'is', 'eating', 'a'], ['is', 'eating', 'a', 'pineapple'], ['eating', 'a', 'pineapple', 'today'], ['alice', 'is', 'eating', 'an'], ['is', 'eating', 'an', 'orange'], ['eating', 'an', 'orange', 'today'], ['i', 'am', 'eating', 'a'], ['am', 'eating', 'a', 'mango'], ['eating', 'a', 'mango', 'now'], ['raju', 'was', 'eating', 'an'], ['was', 'eating', 'an', 'apple'], ['eating', 'an', 'apple', 'yesterday'], ['raju', 'was', 'eating', 'a'], ['was', 'eating', 'a', 'banana'], ['eating', 'a', 'banana', 'yesterday'], ['amit', 'was', 'eating', 'a'], ['was', 'eating', 'a', 'grapes'], ['eating', 'a', 'grapes', 'yesterday'], ['david', 'was', 'eating', 'a'], ['was', 'eating', 'a', 'papaya'], ['eating', 'a', 'papaya', 'yesterday'], ['bob', 'was', 'eating', 'a'], ['was', 'eating', 'a', 'bread'], ['eating', 'a', 'bread', 'yesterday'], ['robbin', 'was', 'eating', 'a'], ['was', 'eating', 'a', 'vegetables'], ['eating', 'a', 'vegetables', 'yesterday'], ['john', 'was', 'eating', 'a'], ['was', 'eating', 'a', 'melon'], ['eating', 'a', 'melon', 'yesterday'], ['nancy', 'was', 'eating', 'a'], ['was', 'eating', 'a', 'pineapple'], ['eating', 'a', 'pineapple', 'yesterday'], ['alice', 'was', 'eating', 'an'], ['was', 'eating', 'an', 'orange'], ['eating', 'an', 'orange', 'yesterday'], ['raju', 'is', 'playing', 'football'], ['is', 'playing', 'football', 'today'], ['raju', 'is', 'playing', 'basketball'], ['is', 'playing', 'basketball', 'today'], ['amit', 'is', 'playing', 'cricket'], ['is', 'playing', 'cricket', 'today'], ['david', 'is', 'playing', 'volleyball'], ['is', 'playing', 'volleyball', 'today'], ['bob', 'is', 'playing', 'badminton'], ['is', 'playing', 'badminton', 'today'], ['robbin', 'is', 'playing', 'chess'], ['is', 'playing', 'chess', 'today'], ['john', 'is', 'playing', 'a'], ['is', 'playing', 'a', 'ludo'], ['playing', 'a', 'ludo', 'today'], ['nancy', 'is', 'playing', 'polo'], ['is', 'playing', 'polo', 'today'], ['alice', 'is', 'playing', 'poker'], ['is', 'playing', 'poker', 'today'], ['raju', 'is', 'not', 'playing'], ['is', 'not', 'playing', 'football'], ['not', 'playing', 'football', 'today'], ['raju', 'was', 'not', 'playing'], ['was', 'not', 'playing', 'basketball'], ['not', 'playing', 'basketball', 'yesterday'], ['amit', 'is', 'not', 'playing'], ['is', 'not', 'playing', 'cricket'], ['not', 'playing', 'cricket', 'today'], ['david', 'was', 'not', 'playing'], ['was', 'not', 'playing', 'volleyball'], ['not', 'playing', 'volleyball', 'yesterday'], ['bob', 'is', 'not', 'playing'], ['is', 'not', 'playing', 'badminton'], ['not', 'playing', 'badminton', 'today'], ['robbin', 'was', 'not', 'playing'], ['was', 'not', 'playing', 'chess'], ['not', 'playing', 'chess', 'yesterday'], ['john', 'is', 'not', 'playing'], ['is', 'not', 'playing', 'a'], ['not', 'playing', 'a', 'ludo'], ['playing', 'a', 'ludo', 'today'], ['nancy', 'was', 'not', 'playing'], ['was', 'not', 'playing', 'polo'], ['not', 'playing', 'polo', 'yesterday'], ['alice', 'is', 'not', 'playing'], ['is', 'not', 'playing', 'poker'], ['not', 'playing', 'poker', 'today'], ['raju', 'is', 'not', 'running'], ['is', 'not', 'running', 'on'], ['not', 'running', 'on', 'floor'], ['raju', 'was', 'not', 'running'], ['was', 'not', 'running', 'on'], ['not', 'running', 'on', 'terrace'], ['amit', 'is', 'not', 'walking'], ['is', 'not', 'walking', 'in'], ['not', 'walking', 'in', 'the'], ['walking', 'in', 'the', 'room'], ['david', 'was', 'not', 'running'], ['was', 'not', 'running', 'with'], ['not', 'running', 'with', 'me'], ['bob', 'is', 'not', 'walking'], ['is', 'not', 'walking', 'today'], ['robbin', 'was', 'not', 'running'], ['was', 'not', 'running', 'i'], ['not', 'running', 'i', 'guess'], ['john', 'is', 'not', 'going'], ['is', 'not', 'going', 'out'], ['not', 'going', 'out', 'today'], ['nancy', 'was', 'not', 'walking'], ['was', 'not', 'walking', 'on'], ['not', 'walking', 'on', 'the'], ['walking', 'on', 'the', 'floor'], ['alice', 'is', 'not', 'listening'], ['is', 'not', 'listening', 'me'], ['cat', 'is', 'walking', 'in'], ['is', 'walking', 'in', 'the'], ['walking', 'in', 'the', 'room'], ['the', 'cat', 'is', 'walking'], ['cat', 'is', 'walking', 'in'], ['is', 'walking', 'in', 'the'], ['walking', 'in', 'the', 'bedroom']]
+2021-03-28 10:23:36.500219: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-03-28 10:23:36.504018: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
+2021-03-28 10:23:36.505030: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-03-28 10:23:36.515261: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: admin-PC
+2021-03-28 10:23:36.516404: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: admin-PC
+2021-03-28 10:23:36.518714: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2021-03-24 17:49:03.388098: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-03-28 10:23:36.522684: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
 Model: "sequential"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
-embedding (Embedding)        (None, 2, 50)             2270850
+embedding (Embedding)        (None, 3, 50)             2271050
 _________________________________________________________________
-flatten (Flatten)            (None, 100)               0
+flatten (Flatten)            (None, 150)               0
 _________________________________________________________________
-dense (Dense)                (None, 60)                6060
+dense (Dense)                (None, 60)                9060
 _________________________________________________________________
-dense_1 (Dense)              (None, 45417)             2770437
+dense_1 (Dense)              (None, 45421)             2770681
 =================================================================
-Total params: 5,047,347
-Trainable params: 5,047,347
+Total params: 5,050,791
+Trainable params: 5,050,791
 Non-trainable params: 0
 _________________________________________________________________
 None
-2021-03-24 17:49:03.901437: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
-8729/8729 [==============================] - 1564s 178ms/step - loss: 18.4527 - accuracy: 0.1071 - val_loss: 6.5455 - val_accuracy: 0.1302
-Epoch 1/10
-48/48 [==============================] - 5s 91ms/step - loss: 4.8847 - accuracy: 0.1667
-Epoch 2/10
-48/48 [==============================] - 3s 53ms/step - loss: 1.0113 - accuracy: 0.5000
-Epoch 3/10
-48/48 [==============================] - 2s 42ms/step - loss: 0.7936 - accuracy: 0.8333
-Epoch 4/10
-48/48 [==============================] - 2s 42ms/step - loss: 0.5172 - accuracy: 1.0000
-Epoch 5/10
-48/48 [==============================] - 2s 47ms/step - loss: 0.3700 - accuracy: 1.0000
-Epoch 6/10
-48/48 [==============================] - 2s 42ms/step - loss: 0.2936 - accuracy: 1.0000
-Epoch 7/10
-48/48 [==============================] - 2s 42ms/step - loss: 0.2521 - accuracy: 1.0000
-Epoch 8/10
-48/48 [==============================] - 2s 46ms/step - loss: 0.2268 - accuracy: 1.0000
-Epoch 9/10
-48/48 [==============================] - 3s 55ms/step - loss: 0.2081 - accuracy: 1.0000
-Epoch 10/10
-48/48 [==============================] - 2s 46ms/step - loss: 0.1944 - accuracy: 1.0000
+2021-03-28 10:23:37.026954: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+Epoch 1/2
+8292/8292 [==============================] - 1288s 155ms/step - loss: 18.7357 - accuracy: 0.1056 - val_loss: 6.5228 - val_accuracy: 0.1385
+Epoch 2/2
+8292/8292 [==============================] - 1250s 151ms/step - loss: 6.5483 - accuracy: 0.1522 - val_loss: 6.5441 - val_accuracy: 0.1441
+Epoch 1/5
+138/138 [==============================] - 6s 39ms/step - loss: 6.4016 - accuracy: 0.2609
+Epoch 2/5
+138/138 [==============================] - 6s 41ms/step - loss: 4.1047 - accuracy: 0.3913
+Epoch 3/5
+138/138 [==============================] - 5s 39ms/step - loss: 3.1754 - accuracy: 0.4058
+Epoch 4/5
+138/138 [==============================] - 5s 39ms/step - loss: 2.5927 - accuracy: 0.4638
+Epoch 5/5
+138/138 [==============================] - 5s 38ms/step - loss: 2.2308 - accuracy: 0.4638
 Dumping to file
-[['raju', 'eats', 'today'], ['amit', 'eats', 'today'], ['david', 'eats', 'today'], ['bob', 'eats', 'today'], ['robbin', 'eats', 'today'], ['john', 'eats', 'today'], ['nancy', 'eats', 'today'], ['alice', 'eats', 'today'], ['raju', 'runs', 'today'], ['amit', 'runs', 'today'], ['david', 'runs', 'today'], ['bob', 'runs', 'today'], ['robbin', 'runs', 'today'], ['john', 'runs', 'today'], ['nancy', 'runs', 'today'], ['alice', 'runs', 'today'], ['raju', 'plays', 'today'], ['amit', 'plays', 'today'], ['david', 'plays', 'today'], ['bob', 'plays', 'today'], ['robbin', 'plays', 'today'], ['john', 'plays', 'today'], ['nancy', 'plays', 'today'], ['alice', 'plays', 'today'], ['raju', 'ate', 'yesterday'], ['amit', 'ate', 'yesterday'], ['david', 'ate', 'yesterday'], ['bob', 'ate', 'yesterday'], ['robbin', 'ate', 'yesterday'], ['john', 'ate', 'yesterday'], ['nancy', 'ate', 'yesterday'], ['alice', 'ate', 'yesterday'], ['raju', 'ran', 'yesterday'], ['amit', 'ran', 'yesterday'], ['david', 'ran', 'yesterday'], ['bob', 'ran', 'yesterday'], ['robbin', 'ran', 'yesterday'], ['john', 'ran', 'yesterday'], ['nancy', 'ran', 'yesterday'], ['alice', 'ran', 'yesterday'], ['raju', 'played', 'yesterday'], ['amit', 'played', 'yesterday'], ['david', 'played', 'yesterday'], ['bob', 'played', 'yesterday'], ['robbin', 'played', 'yesterday'], ['john', 'played', 'yesterday'], ['nancy', 'played', 'yesterday'], ['alice', 'played', 'yesterday']]
-cosine similarity: (eats_vector - ate_vector).(runs_vector - ran_vector) is:  [[0.9757737]]
-cosine similarity: (eats_vector - ate_vector).(plays_vector - played_vector) is:  [[0.96277064]]
-cosine similarity: (runs_vector - ran_vector).(plays_vector - played_vector) is:  [[0.9757668]]
+[['raju', 'is', 'eating', 'an'], ['is', 'eating', 'an', 'apple'], ['eating', 'an', 'apple', 'today'], ['raju', 'is', 'eating', 'a'], ['is', 'eating', 'a', 'banana'], ['eating', 'a', 'banana', 'today'], ['amit', 'is', 'eating', 'a'], ['is', 'eating', 'a', 'grapes'], ['eating', 'a', 'grapes', 'today'], ['david', 'is', 'eating', 'a'], ['is', 'eating', 'a', 'papaya'], ['eating', 'a', 'papaya', 'today'], ['bob', 'is', 'eating', 'a'], ['is', 'eating', 'a', 'bread'], ['eating', 'a', 'bread', 'today'], ['robbin', 'is', 'eating', 'a'], ['is', 'eating', 'a', 'vegetables'], ['eating', 'a', 'vegetables', 'today'], ['john', 'is', 'eating', 'a'], ['is', 'eating', 'a', 'melon'], ['eating', 'a', 'melon', 'today'], ['nancy', 'is', 'eating', 'a'], ['is', 'eating', 'a', 'pineapple'], ['eating', 'a', 'pineapple', 'today'], ['alice', 'is', 'eating', 'an'], ['is', 'eating', 'an', 'orange'], ['eating', 'an', 'orange', 'today'], ['i', 'am', 'eating', 'a'], ['am', 'eating', 'a', 'mango'], ['eating', 'a', 'mango', 'now'], ['raju', 'was', 'eating', 'an'], ['was', 'eating', 'an', 'apple'], ['eating', 'an', 'apple', 'yesterday'], ['raju', 'was', 'eating', 'a'], ['was', 'eating', 'a', 'banana'], ['eating', 'a', 'banana', 'yesterday'], ['amit', 'was', 'eating', 'a'], ['was', 'eating', 'a', 'grapes'], ['eating', 'a', 'grapes', 'yesterday'], ['david', 'was', 'eating', 'a'], ['was', 'eating', 'a', 'papaya'], ['eating', 'a', 'papaya', 'yesterday'], ['bob', 'was', 'eating', 'a'], ['was', 'eating', 'a', 'bread'], ['eating', 'a', 'bread', 'yesterday'], ['robbin', 'was', 'eating', 'a'], ['was', 'eating', 'a', 'vegetables'], ['eating', 'a', 'vegetables', 'yesterday'], ['john', 'was', 'eating', 'a'], ['was', 'eating', 'a', 'melon'], ['eating', 'a', 'melon', 'yesterday'], ['nancy', 'was', 'eating', 'a'], ['was', 'eating', 'a', 'pineapple'], ['eating', 'a', 'pineapple', 'yesterday'], ['alice', 'was', 'eating', 'an'], ['was', 'eating', 'an', 'orange'], ['eating', 'an', 'orange', 'yesterday'], ['raju', 'is', 'playing', 'football'], ['is', 'playing', 'football', 'today'], ['raju', 'is', 'playing', 'basketball'], ['is', 'playing', 'basketball', 'today'], ['amit', 'is', 'playing', 'cricket'], ['is', 'playing', 'cricket', 'today'], ['david', 'is', 'playing', 'volleyball'], ['is', 'playing', 'volleyball', 'today'], ['bob', 'is', 'playing', 'badminton'], ['is', 'playing', 'badminton', 'today'], ['robbin', 'is', 'playing', 'chess'], ['is', 'playing', 'chess', 'today'], ['john', 'is', 'playing', 'a'], ['is', 'playing', 'a', 'ludo'], ['playing', 'a', 'ludo', 'today'], ['nancy', 'is', 'playing', 'polo'], ['is', 'playing', 'polo', 'today'], ['alice', 'is', 'playing', 'poker'], ['is', 'playing', 'poker', 'today'], ['raju', 'is', 'not', 'playing'], ['is', 'not', 'playing', 'football'], ['not', 'playing', 'football', 'today'], ['raju', 'was', 'not', 'playing'], ['was', 'not', 'playing', 'basketball'], ['not', 'playing', 'basketball', 'yesterday'], ['amit', 'is', 'not', 'playing'], ['is', 'not', 'playing', 'cricket'], ['not', 'playing', 'cricket', 'today'], ['david', 'was', 'not', 'playing'], ['was', 'not', 'playing', 'volleyball'], ['not', 'playing', 'volleyball', 'yesterday'], ['bob', 'is', 'not', 'playing'], ['is', 'not', 'playing', 'badminton'], ['not', 'playing', 'badminton', 'today'], ['robbin', 'was', 'not', 'playing'], ['was', 'not', 'playing', 'chess'], ['not', 'playing', 'chess', 'yesterday'], ['john', 'is', 'not', 'playing'], ['is', 'not', 'playing', 'a'], ['not', 'playing', 'a', 'ludo'], ['playing', 'a', 'ludo', 'today'], ['nancy', 'was', 'not', 'playing'], ['was', 'not', 'playing', 'polo'], ['not', 'playing', 'polo', 'yesterday'], ['alice', 'is', 'not', 'playing'], ['is', 'not', 'playing', 'poker'], ['not', 'playing', 'poker', 'today'], ['raju', 'is', 'not', 'running'], ['is', 'not', 'running', 'on'], ['not', 'running', 'on', 'floor'], ['raju', 'was', 'not', 'running'], ['was', 'not', 'running', 'on'], ['not', 'running', 'on', 'terrace'], ['amit', 'is', 'not', 'walking'], ['is', 'not', 'walking', 'in'], ['not', 'walking', 'in', 'the'], ['walking', 'in', 'the', 'room'], ['david', 'was', 'not', 'running'], ['was', 'not', 'running', 'with'], ['not', 'running', 'with', 'me'], ['bob', 'is', 'not', 'walking'], ['is', 'not', 'walking', 'today'], ['robbin', 'was', 'not', 'running'], ['was', 'not', 'running', 'i'], ['not', 'running', 'i', 'guess'], ['john', 'is', 'not', 'going'], ['is', 'not', 'going', 'out'], ['not', 'going', 'out', 'today'], ['nancy', 'was', 'not', 'walking'], ['was', 'not', 'walking', 'on'], ['not', 'walking', 'on', 'the'], ['walking', 'on', 'the', 'floor'], ['alice', 'is', 'not', 'listening'], ['is', 'not', 'listening', 'me'], ['cat', 'is', 'walking', 'in'], ['is', 'walking', 'in', 'the'], ['walking', 'in', 'the', 'room'], ['the', 'cat', 'is', 'walking'], ['cat', 'is', 'walking', 'in'], ['is', 'walking', 'in', 'the'], ['walking', 'in', 'the', 'bedroom']]
+cosine similarity: (eats_vector - ate_vector).(runs_vector - ran_vector) is:  [[-0.28705212]]
+cosine similarity: (eats_vector - ate_vector).(plays_vector - played_vector) is:  [[-0.08914579]]
+cosine similarity: (eats_vector - ate_vector).(running_vector - walking_vector) is:  [[0.13002576]]
+cosine similarity: (eats_vector - ate_vector).(playing_vector - eating_vector) is:  [[0.15506536]]
+cosine similarity: (eats_vector - ate_vector).(running_vector - playing_vector) is:  [[-0.31956872]]
+cosine similarity: (runs_vector - ran_vector).(plays_vector - played_vector) is:  [[0.22339162]]
+cosine similarity: (runs_vector - ran_vector).(running_vector - walking_vector) is:  [[-0.01311995]]
+cosine similarity: (runs_vector - ran_vector).(playing_vector - eating_vector) is:  [[-0.09811768]]
+cosine similarity: (runs_vector - ran_vector).(running_vector - playing_vector) is:  [[0.19298409]]
+cosine similarity: (plays_vector - played_vector).(running_vector - walking_vector) is:  [[0.3791906]]
+cosine similarity: (plays_vector - played_vector).(playing_vector - eating_vector) is:  [[-0.01847615]]
+cosine similarity: (plays_vector - played_vector).(running_vector - playing_vector) is:  [[0.30308676]]
+cosine similarity: (running_vector - walking_vector).(playing_vector - eating_vector) is:  [[-0.46796924]]
+cosine similarity: (running_vector - walking_vector).(running_vector - playing_vector) is:  [[0.5836617]]
+cosine similarity: (playing_vector - eating_vector).(running_vector - playing_vector) is:  [[-0.67601454]]
+word pair: [papaya, banana], Cosine Similarity: [[0.8779282]]
+word pair: [papaya, grapes], Cosine Similarity: [[0.76884127]]
+word pair: [papaya, mango], Cosine Similarity: [[-0.5846282]]
+word pair: [banana, grapes], Cosine Similarity: [[0.74135596]]
+word pair: [banana, mango], Cosine Similarity: [[-0.69597113]]
+word pair: [grapes, mango], Cosine Similarity: [[-0.5846718]]
+word pair: [plays, eats], Cosine Similarity: [[-0.03998928]]
+word pair: [plays, runs], Cosine Similarity: [[0.2814113]]
+word pair: [plays, play], Cosine Similarity: [[0.6200544]]
+word pair: [plays, eat], Cosine Similarity: [[0.64162344]]
+word pair: [plays, run], Cosine Similarity: [[0.55247104]]
+word pair: [eats, runs], Cosine Similarity: [[0.266734]]
+word pair: [eats, play], Cosine Similarity: [[-0.04681112]]
+word pair: [eats, eat], Cosine Similarity: [[-0.38433248]]
+word pair: [eats, run], Cosine Similarity: [[0.05033682]]
+word pair: [runs, play], Cosine Similarity: [[0.49774256]]
+word pair: [runs, eat], Cosine Similarity: [[-0.15972611]]
+word pair: [runs, run], Cosine Similarity: [[0.51536465]]
+word pair: [play, eat], Cosine Similarity: [[0.19324456]]
+word pair: [play, run], Cosine Similarity: [[0.37122884]]
+word pair: [eat, run], Cosine Similarity: [[0.42326844]]
+word pair: [today, yesterday], Cosine Similarity: [[0.2116649]]
+word pair: [do, does], Cosine Similarity: [[0.8568626]]
+word pair: [do, is], Cosine Similarity: [[0.2916535]]
+word pair: [do, has], Cosine Similarity: [[0.29719353]]
+word pair: [do, have], Cosine Similarity: [[0.2604786]]
+word pair: [do, did], Cosine Similarity: [[0.8908994]]
+word pair: [do, was], Cosine Similarity: [[0.20747374]]
+word pair: [do, were], Cosine Similarity: [[0.16987447]]
+word pair: [do, had], Cosine Similarity: [[0.2949074]]
+word pair: [do, will], Cosine Similarity: [[0.36783865]]
+word pair: [do, shall], Cosine Similarity: [[0.45638737]]
+word pair: [does, is], Cosine Similarity: [[0.41980624]]
+word pair: [does, has], Cosine Similarity: [[0.42539847]]
+word pair: [does, have], Cosine Similarity: [[0.3762192]]
+word pair: [does, did], Cosine Similarity: [[0.97553325]]
+word pair: [does, was], Cosine Similarity: [[0.32554546]]
+word pair: [does, were], Cosine Similarity: [[0.33720234]]
+word pair: [does, had], Cosine Similarity: [[0.4601015]]
+word pair: [does, will], Cosine Similarity: [[0.4943545]]
+word pair: [does, shall], Cosine Similarity: [[0.49001008]]
+word pair: [is, has], Cosine Similarity: [[0.46771207]]
+word pair: [is, have], Cosine Similarity: [[0.5166168]]
+word pair: [is, did], Cosine Similarity: [[0.34476194]]
+word pair: [is, was], Cosine Similarity: [[0.81093925]]
+word pair: [is, were], Cosine Similarity: [[0.81495845]]
+word pair: [is, had], Cosine Similarity: [[0.5088503]]
+word pair: [is, will], Cosine Similarity: [[0.17442393]]
+word pair: [is, shall], Cosine Similarity: [[0.09741565]]
+word pair: [has, have], Cosine Similarity: [[0.94713986]]
+word pair: [has, did], Cosine Similarity: [[0.32972178]]
+word pair: [has, was], Cosine Similarity: [[0.49310917]]
+word pair: [has, were], Cosine Similarity: [[0.47197077]]
+word pair: [has, had], Cosine Similarity: [[0.93690723]]
+word pair: [has, will], Cosine Similarity: [[0.3888693]]
+word pair: [has, shall], Cosine Similarity: [[0.39978918]]
+word pair: [have, did], Cosine Similarity: [[0.28956735]]
+word pair: [have, was], Cosine Similarity: [[0.5402353]]
+word pair: [have, were], Cosine Similarity: [[0.52710634]]
+word pair: [have, had], Cosine Similarity: [[0.9392038]]
+word pair: [have, will], Cosine Similarity: [[0.24072912]]
+word pair: [have, shall], Cosine Similarity: [[0.25167665]]
+word pair: [did, was], Cosine Similarity: [[0.23944144]]
+word pair: [did, were], Cosine Similarity: [[0.2560076]]
+word pair: [did, had], Cosine Similarity: [[0.37100604]]
+word pair: [did, will], Cosine Similarity: [[0.5358555]]
+word pair: [did, shall], Cosine Similarity: [[0.5627087]]
+word pair: [was, were], Cosine Similarity: [[0.8610532]]
+word pair: [was, had], Cosine Similarity: [[0.5226808]]
+word pair: [was, will], Cosine Similarity: [[0.07441321]]
+word pair: [was, shall], Cosine Similarity: [[0.000644]]
+word pair: [were, had], Cosine Similarity: [[0.5571857]]
+word pair: [were, will], Cosine Similarity: [[0.03246509]]
+word pair: [were, shall], Cosine Similarity: [[-0.01661591]]
+word pair: [had, will], Cosine Similarity: [[0.3140893]]
+word pair: [had, shall], Cosine Similarity: [[0.32509682]]
+word pair: [will, shall], Cosine Similarity: [[0.931018]]
+word pair: [raju, amit], Cosine Similarity: [[0.09746062]]
+word pair: [raju, robbin], Cosine Similarity: [[0.46440932]]
+word pair: [raju, nancy], Cosine Similarity: [[0.4159762]]
+word pair: [raju, david], Cosine Similarity: [[0.1537218]]
+word pair: [raju, john], Cosine Similarity: [[-0.5332731]]
+word pair: [raju, alice], Cosine Similarity: [[0.87015456]]
+word pair: [amit, robbin], Cosine Similarity: [[0.7671295]]
+word pair: [amit, nancy], Cosine Similarity: [[0.5642314]]
+word pair: [amit, david], Cosine Similarity: [[0.5109003]]
+word pair: [amit, john], Cosine Similarity: [[0.2760419]]
+word pair: [amit, alice], Cosine Similarity: [[-0.11160706]]
+word pair: [robbin, nancy], Cosine Similarity: [[0.7065885]]
+word pair: [robbin, david], Cosine Similarity: [[0.6675152]]
+word pair: [robbin, john], Cosine Similarity: [[0.21677397]]
+word pair: [robbin, alice], Cosine Similarity: [[0.10655481]]
+word pair: [nancy, david], Cosine Similarity: [[0.6176245]]
+word pair: [nancy, john], Cosine Similarity: [[0.11666183]]
+word pair: [nancy, alice], Cosine Similarity: [[0.13899912]]
+word pair: [david, john], Cosine Similarity: [[0.56980085]]
+word pair: [david, alice], Cosine Similarity: [[-0.17615654]]
+word pair: [john, alice], Cosine Similarity: [[-0.7229573]]
+
+Actual Sentence: a dog was running in a room
+Predicted sentence with context size:3 is: a dog was playing in the banana
 
 Process finished with exit code 0
